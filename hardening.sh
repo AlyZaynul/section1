@@ -138,3 +138,5 @@ comd1=$(chmod u-x,go-wx $(readlink -e /etc/issue.net))
 
 #1.8.10 not running gdm3
 #cmmd 18=$(sed -i -e 's/Enable=true//g' /etc/gdm3/custom.conf)
+
+comd4=$(apt dist-upgrade)
