@@ -156,6 +156,6 @@ command5=$(systemctl --now enable ntp.service)
 #while user need to login on raspberry pi, this authentication can already be done by the OS no need for additional service
 cmdd=$(apt purge xserver-xorg* -y)
 
-cmmd1=$(systemctl stop avahi-daaemon.service)
-cmmd2=$(systemctl stop avahi-daemon.socket)
+#cmmd1=$(systemctl stop avahi-daaemon.service)
+#cmmd2=$(systemctl stop avahi-daemon.socket)
 cmmd3=$(apt purge avahi-daemon)
