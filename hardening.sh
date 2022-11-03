@@ -140,3 +140,22 @@ comd1=$(chmod u-x,go-wx $(readlink -e /etc/issue.net))
 #cmmd 18=$(sed -i -e 's/Enable=true//g' /etc/gdm3/custom.conf)
 
 comd4=$(apt dist-upgrade)
+
+#2.1.4.1
+command=$(apt purge ntp -y)
+command1=$(apt install ntp -y)
+command2=$(sed -i -e 's/restrict -4 default kod notrap nomodify nopeer noquery limited/restrict -4 default kod notrap nomodify nopeer noquery/g'  /etc/ntp.conf)
+command3=$(sed -i -e 's/restrict -6 default kod notrap nomodify nopeer noquery limited/restrict -6 default kod notrap nomodify nopeer noquery/g'  /etc/ntp.conf)
+command4=$(systemctl unmask ntp.service)
+command5=$(systemctl --now enable ntp.service)
+
+
+
+#2.2 & 2.3 need to check which services are used by ACTUAL raspberry pi
+
+#while user need to login on raspberry pi, this authentication can already be done by the OS no need for additional service
+cmdd=$(apt purge xserver-xorg* -y)
+
+cmmd1=$(systemctl stop avahi-daaemon.service)
+cmmd2=$(systemctl stop avahi-daemon.socket)
+cmmd3=$(apt purge avahi-daemon)
